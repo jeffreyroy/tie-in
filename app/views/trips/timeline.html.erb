@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<!--   <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+<!--   <script src="d3-timeline.js"></script> -->
+
+  <style type="text/css">
+
+    svg {
+      padding: 10px;
+      border: 1px solid black;
+      margin-left: 20px;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: black;
+      shape-rendering: crispEdges;
+    }
+
+    .axis text {
+      font-family: sans-serif;
+      font-size: 10px;
+    }
+
+    .timeline-label {
+      font-family: sans-serif;
+      font-size: 12px;
+      background-color: white;
+      margin-right: 50;
+    }
+
+    .coloredDiv {
+      height:20px; width:20px; float:left;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <div>
+    <h1><%= @trip.name %></h1>
+    <br>
+    <div id="timeline3"></div>
+    <div id="hoverRes">
+      <div class="coloredDiv"></div>
+      <div id="name"></div>
+      <div id="scrolled_date"></div>
+      <div id="event-details"></div>
+    </div>
+  </div>
+  <div class="timeline-data" id="<%=@trip.id%>"></div>
+</div>
+
+</body>
+</html>

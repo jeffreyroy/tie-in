@@ -1,0 +1,58 @@
+<div class="container">
+  <div id="mytrips" class="jumbotron">
+    <h1 class="brand-yellow"><%= @trip.name %></h1>
+    <h2 class="brand-orange">accommodations</h2>
+  </div>
+
+  <div class="container">
+    <div class="transitions-enabled" id="pins">
+      <% @accommodations.each do |accommodation| %>
+      <div class="box panel panel-default">
+        <div class="panel-body">
+         <h4><%= link_to (accommodation.location.name), trip_accommodation_path(@trip,accommodation) %></h4>
+          <span class="description"><%= accommodation.creator.first_name %></span>
+         </div>
+       </div>
+        <% end %>
+        <div class="box panel panel-default">
+          <div class="panel-body">
+            <h4><a href="/trips/<%=@trip.id%>/accommodations/new"><i class="fa fa-plus fa-1x" aria-hidden="true"></i> add an accommodation</a></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 400px;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.0077519, lng: -97.092877},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= @key %>&callback=initMap"
+    async defer></script>
+  </body>
+</html>

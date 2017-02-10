@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require 'masonry/transitions'
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@lightblue = #36C6F3;
+
+
+// orange: F15A23
+// blue: 1D376A
+// yellow: DBC124
+// lightblue: 36C6F3
+body {
+  background: #ffffff;
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #F15A23;
+      text-decoration: none;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 100;
+}
+
+.brand-blue {
+  color: #1D376A;
+  font-weight: 300;
+}
+
+.brand-yellow {
+  color: #DBC124;
+  font-weight: 300;
+}
+
+.brand-light-blue {
+  color: #36C6F3;
+  font-weight: 300;
+}
+
+.brand-orange {
+  color: #F15A23;
+  font-weight: 300;
+}
+
+.brand-blue-light {
+  color: #1D376A;
+}
+
+.brand-yellow-light {
+  color: #DBC124;
+}
+
+.brand-light-blue-light {
+  color: #36C6F3;
+}
+
+.brand-orange-light {
+  color: #F15A23;
+}
+
+nav {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+  .navbar-brand {
+    a {
+      color: #1D376A;
+      font-weight: bold;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#pins {
+  margin: 0 auto;
+  width: 100%;
+  .box {
+    margin: 10px;
+    width: 250px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+    border-radius: 7px;
+    text-align: center;
+    h4 {
+      font-size: 18px;
+      font-weight: 200;
+      margin: 0;
+      padding: 10px 10px;
+      a {
+        color: #474747;
+      }
+    }
+    .user {
+      font-size: 12px;
+      border-top: 1px solid #EAEAEA;
+      padding: 15px;
+      margin: 0;
+    }
+    a:hover {
+      color: #F15A23;
+      text-decoration: none;
+    }
+  }
+}
+
+#edit_page {
+  .current_image {
+    img {
+      display: block;
+      margin: 20px 0;
+    }
+  }
+}
+
+#pin_show {
+  .panel-heading {
+    padding: 0;
+  }
+  .pin_image {
+    img {
+      max-width: 100%;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .panel-body {
+    padding: 35px;
+    h1 {
+      margin: 0 0 10px 0;
+    }
+    .description {
+      color: #868686;
+      line-height: 1.75;
+      margin: 0;
+    }
+  }
+  .panel-footer {
+    padding: 20px 35px;
+    p {
+      margin: 0;
+    }
+    .user {
+      padding-top: 8px;
+    }
+  }
+}
+
+textarea {
+  min-height: 250px;
+}
+
+#spacer {
+  height: 5em;
+}
+.description {
+  color: #868686;
+  line-height: 1.75;
+  margin: 0;
+}
+.description-yellow {
+  color: #DBC124;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.signup {
+  background: #1D376A;
+  color: #DBC124;
+  &:hover {
+    color: #F15A23;
+  }
+}
+
+#mytrips {
+  background: #1D376A;
+  color: #DBC124;
+  a {
+    color: #DBC124;
+  }
+}
+
+#friends {
+  background: none;
+  border: none;
+}
