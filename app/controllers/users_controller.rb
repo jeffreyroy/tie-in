@@ -1,15 +1,13 @@
 class UsersController < ApplicationController
-  def index
-    @users = User.all
 
-    @json = @users.map do |user|
-      {
-        id: user.id,
-        first_name: user.first_name,
-        last_name: user.last_name,
-        email: user.email,
-      }
+  def show
+    if params[:trip_id]
+      @trip = Trip.find(params[:trip_id])
+      @user = User.find(params[:id])
+      @accommodations = @user.accommodations.where(trip_id: @trip.id)
+      @transits = @user.transits.where(trip_id: @trip.id)
+      @events = @user.events.where(trip_id: @trip.id)
     end
-    render :json => @json
   end
+
 end
